@@ -25,6 +25,10 @@ export default [
     extends: ["next/core-web-vitals"],
     rules: {
       "react/react-in-jsx-scope": "off", // Desabilitar a regra que exige a importação do React
+      "react/prop-types": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "@typescript-eslint/explicit-module-boundary-types": "off"
     },
   }),
 ];
