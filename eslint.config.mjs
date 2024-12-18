@@ -10,6 +10,7 @@ const compat = new FlatCompat({
 })
 
 /** @type {import('eslint').Linter.Config[]} */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"]
@@ -21,11 +22,9 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   ...compat.config({
-    extends: ['next'],
-  }),
-  {
+    extends: ["next/core-web-vitals"],
     rules: {
       "react/react-in-jsx-scope": "off", // Desabilitar a regra que exige a importação do React
     },
-  },
+  }),
 ];
