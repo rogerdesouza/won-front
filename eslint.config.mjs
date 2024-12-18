@@ -22,7 +22,11 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   ...compat.config({
-    extends: ['next/core-web-vitals'],
+    extends: [
+      'next/core-web-vitals',
+      'eslint:recommended',
+      'plugin:prettier/recommended'
+    ],
     rules: {
       'react/react-in-jsx-scope': 'off', // Desabilitar a regra que exige a importação do React
       'react/prop-types': 'off',
