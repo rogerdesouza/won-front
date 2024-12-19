@@ -6,7 +6,8 @@ import { FlatCompat } from '@eslint/eslintrc'
 
 const compat = new FlatCompat({
   // import.meta.dirname is available after Node.js v20.11.0
-  baseDirectory: import.meta.dirname
+  baseDirectory: import.meta.dirname,
+  recommendedConfig: pluginJs.configs.recommended
 })
 
 /** @type {import('eslint').Linter.Config[]} */
@@ -32,7 +33,8 @@ export default [
       'react/prop-types': 'off',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      '@typescript-eslint/explicit-module-boundary-types': 'off'
+      '@typescript-eslint/explicit-module-boundary-types': 'off',
+      'no-undef': 'off' // Desativa o aviso de React indefinido
     }
   })
 ]
